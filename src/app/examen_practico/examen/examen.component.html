@@ -1,0 +1,51 @@
+<div style="margin-top: 90px; margin-left: 100px;">
+    <div >
+        <h1>Catalogo de usuarios</h1>
+        @if(listaUsuarios.length > 0){
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NOMBRE</th>
+              <th>PASSWORD</th>
+              <th>Seleccionar</th>
+              <th>Eliminar</th>
+      
+            </tr>
+          </thead>
+          <tbody>
+            @for (usuario of listaUsuarios; track usuario.id) {
+            <tr>
+              <td>{{usuario.id}}</td>
+              <td>{{usuario.name}}</td>
+              <td>{{usuario.password}}</td>
+              <td>
+                <button type="button" class="btn btn-warning" (click)="selectUser(usuario)">Seleccionar</button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-danger" (click)="deleteUser(usuario.id)">Eliminar</button>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+        } @else {
+        <h3>No hay usuarios</h3>
+        }
+      </div>
+      <div>
+        <p>
+          ID <input type="number" class="form-control" [(ngModel)]="usuario.id">
+        </p>
+        <p>
+          Nombre <input type="text" class="form-control" [(ngModel)]="usuario.name">
+        </p>
+        <p>
+          Password <input type="number" class="form-control" [(ngModel)]="usuario.password">
+        </p>
+        <p><button type="button" class="btn btn-primary" (click)="agregarusuario()">Agregar</button></p>
+        <p><button type="button" class="btn btn-success" (click)="modUser()">Editar</button></p>
+      
+      </div>
+</div>
+

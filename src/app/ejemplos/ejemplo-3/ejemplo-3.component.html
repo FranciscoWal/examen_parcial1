@@ -1,0 +1,48 @@
+<div style="margin-top: 90px;">
+    <h1>Catalogo de productos</h1>
+    @if(listaProd.length > 0){
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Descripcion</th>
+          <th>Precio</th>
+          <th>Seleccionar</th>
+          <th>Eliminar</th>
+  
+        </tr>
+      </thead>
+      <tbody>
+        @for (producto of listaProd; track producto.id) {
+        <tr>
+          <td>{{producto.id}}</td>
+          <td>{{producto.descripcion}}</td>
+          <td>{{producto.precio}}</td>
+          <td>
+            <button type="button" class="btn btn-warning" (click)="selectProduct(producto)">Seleccionar</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger" (click)="deleteProduct(producto.id)">Eliminar</button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    } @else {
+    <h3>No hay productos</h3>
+    }
+  </div>
+  <div>
+    <p>
+      ID <input type="number" class="form-control" [(ngModel)]="producto.id">
+    </p>
+    <p>
+      Descripcion <input type="text" class="form-control" [(ngModel)]="producto.descripcion">
+    </p>
+    <p>
+      Precio <input type="number" class="form-control" [(ngModel)]="producto.precio">
+    </p>
+    <p><button type="button" class="btn btn-primary" (click)="agregarProducto()">Agregar</button></p>
+    <p><button type="button" class="btn btn-success" (click)="modProduct()">Editar</button></p>
+  
+  </div>

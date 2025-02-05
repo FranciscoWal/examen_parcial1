@@ -1,0 +1,64 @@
+<div class="container">
+    <h1>FUNDAMENTOS DE ANGULAR</h1>
+    <div>
+      <h4>INTERPOLACIÓN</h4>
+      <p>Nombre: {{nombre}}</p>
+      <p>Correo:{{email}}</p>
+      <p>Años de Servicio: {{yearService}}</p>
+      <P>Uno mas uno = {{ 21361651 +156316}}</P>
+      <p>Status: {{ estaActivo() }}</p>
+      <p>Total Alumnos: {{sumarAlumnos()}}</p>
+    </div>
+    <br>
+    <div>
+      <h4>Condicional IF</h4>
+      @if(yearService >= 20){
+        <p>Tiene mucha antiguedad</p>
+      } @else{
+        <p>Es nuevo</p>
+      }
+    </div>
+    <br>
+    <div>
+      <h4>Listado de Productos (for)</h4>
+      <table>
+        @for(producto of productos; track producto.id){
+          <tr>{{producto.id}}</tr>
+          <tr>{{producto.descripcion}}</tr>
+          <tr>{{producto.precio}}</tr>
+        }
+      </table>
+    </div>
+    <br>
+    <div>
+      <h4>Swich</h4>
+      @switch (num){
+        @case (1){
+          <p>UNO</p>
+        }
+        @case (2){
+          <p>DOS</p>
+        }
+        @default {
+          <p>Es Otro numero</p>
+        }
+      }
+    </div>
+    <br>
+    <div>
+      <h4>Manejo de eventos</h4>
+      <h6>{{contador}}</h6>
+      <button type="button" (click)="incrementarContador()" class="btn btn-outline-danger">Sumar</button>
+      <button type="button" (click)="decrementarContador()" class="btn btn-outline-danger">Restar</button>
+  
+    </div>
+    <br>
+    <div>
+      <h4>Property Binding</h4>
+      <button type="button" class="btn btn-primary"
+      [disabled]="desactivarBoton">GUARDAR</button>
+      <button type="button" class="btn btn-succes"
+      (click)="cambiarValor()">Habilitarm / Desabilitar BOTON >:</button>
+    </div>
+  
+  </div>

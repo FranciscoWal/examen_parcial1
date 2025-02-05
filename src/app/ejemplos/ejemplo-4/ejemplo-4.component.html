@@ -1,0 +1,26 @@
+
+  <div style="margin-left: 50px;">
+    <div style="margin-top: 100px; ">
+
+      <h1>Formularios Reactivos</h1>
+      <h2>Lista de Tareas</h2>
+    </div>
+    <div class="col-sm-2">Task:
+      <input type="text" class="form-control" [formControl] = "tarea">
+    </div>
+    <p>
+      <button type="button" class="btn btn-primary"
+      (click)="addTask()">Agregar</button>
+    </p>
+    <ol>
+      @for (tak of listaTareas; track $index) {
+        <li>
+          {{ tak }} <a href="#" (click)="deleteTask($index)">Delete?</a>
+        </li>
+      }
+    </ol>
+    <p>
+      <button type="button" class="btn btn-danger"
+      (click)="deleteAllTasks()">Delete All Tasks</button>
+    </p>
+  </div>

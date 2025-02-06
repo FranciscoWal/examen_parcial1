@@ -8,10 +8,10 @@ import { ExamenComponent } from './examen_practico/examen/examen.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-    {path: 'ejemplo-1', component: Ejemplo1Component},
-    {path: 'ejemplo-2', component: Ejemplo2Component},
-    {path: 'ejemplo-3', component: Ejemplo3Component},
-    {path: 'ejemplo-4', component: Ejemplo4Component},
-    {path: 'ejemplo-5', component: Ejemplo5Component},
-    {path: 'examen', component: ExamenComponent}
+    {path: 'examen_parcial1/ejemplo-1', component: Ejemplo1Component},
+    {path: 'examen_parcial1/ejemplo-2', component: Ejemplo2Component},
+    {path: 'examen_parcial1/ejemplo-3', component: Ejemplo3Component},
+    {path: 'examen_parcial1/ejemplo-4', component: Ejemplo4Component},
+    {path: 'examen_parcial1/ejemplo-5', component: Ejemplo5Component},
+    {path: 'examen_parcial1/examen', component: ExamenComponent}
 ];
